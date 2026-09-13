@@ -1,4 +1,5 @@
 import "./App.css";
+import Banner from "./components/homepage/banner/Banner";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
@@ -7,7 +8,9 @@ function App() {
       <header>
         <Navbar></Navbar>
       </header>
-      <h1>Hi, i am Shihab</h1>
+      <main>
+        <Banner></Banner>
+      </main>
     </>
   );
 }

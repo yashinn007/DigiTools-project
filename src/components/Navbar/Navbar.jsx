@@ -45,7 +45,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a href="">
+        <a className="outline-none" href="">
           <img className="w-35 md:w-45" src={DigiTools} alt="" />
         </a>
       </div>
@@ -91,7 +91,7 @@ const Navbar = () => {
           </span>
         </div>
         {/* -------------------------------- */}
-        <a href="#" className="font-semibold text-[16px]">
+        <a href="" className="outline-none font-semibold text-[16px]">
           Login
         </a>
         <a className="hidden md:block pt-1.5 btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] rounded-4xl text-white font-semibold text-[16px]">
