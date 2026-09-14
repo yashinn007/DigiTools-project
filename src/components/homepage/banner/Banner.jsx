@@ -4,7 +4,7 @@ import bannerImg from "../../../assets/banner.png";
 const Banner = () => {
   return (
     <div>
-      <div className="container mx-auto space-x-5 flex justify-center items-center gap-20 py-20">
+      <div className="container mx-auto space-x-5 flex justify-center items-center gap-20 py-10">
         <div className="flex flex-col items-start justify-center space-y-3 py-30">
           <span className="px-4 py-2 rounded-4xl bg-purple-200 text-purple-600">
             New: AI-Powered Tools Available

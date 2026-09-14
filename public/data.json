@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Starter Resume Pack",
+    "description": "A collection of clean and professional resume templates for beginners and job seekers.",
+    "price": 25,
+    "period": "one-time",
+    "tag": "new",
+    "features": [
+      "30+ resume templates",
+      "ATS-friendly designs",
+      "Easy customization",
+      "Export to PDF"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Pro Resume Builder",
+    "description": "Build professional resumes quickly with modern templates and advanced customization tools.",
+    "price": 35,
+    "period": "monthly",
+    "tag": "popular",
+    "features": [
+      "100+ templates",
+      "ATS optimization",
+      "Unlimited resumes",
+      "Export to PDF",
+      "Custom color themes"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Career Boost Pack",
+    "description": "A complete career toolkit designed to help job seekers create better applications.",
+    "price": 45,
+    "period": "one-time",
+    "tag": "best seller",
+    "features": [
+      "Resume templates",
+      "Cover letter templates",
+      "Interview preparation guide",
+      "ATS optimization",
+      "Job application checklist"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Premium Resume Suite",
+    "description": "An advanced resume solution with premium designs and powerful career-building features.",
+    "price": 50,
+    "period": "yearly",
+    "tag": "premium",
+    "features": [
+      "200+ premium templates",
+      "AI resume suggestions",
+      "ATS score checker",
+      "Unlimited downloads",
+      "Priority support"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Creative Resume Pack",
+    "description": "Stylish and creative resume templates for designers, developers, and creative professionals.",
+    "price": 30,
+    "period": "one-time",
+    "tag": "trending",
+    "features": [
+      "50+ creative templates",
+      "Portfolio sections",
+      "Custom typography",
+      "Editable layouts",
+      "Export to PDF"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Job Seeker Pro",
+    "description": "A powerful monthly plan with everything you need to create and manage job applications.",
+    "price": 40,
+    "period": "monthly",
+    "tag": "recommended",
+    "features": [
+      "150+ templates",
+      "ATS optimization",
+      "Cover letter builder",
+      "Resume analytics",
+      "Unlimited edits",
+      "PDF and DOCX export"
+    ]
+  }
+]
