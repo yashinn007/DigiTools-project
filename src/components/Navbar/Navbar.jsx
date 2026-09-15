@@ -1,7 +1,7 @@
 import React from "react";
 import DigiTools from "../../assets/DigiTools.png";
 
-const Navbar = () => {
+const Navbar = ({ cartData }) => {
   return (
     <div className="navbar bg-base-100 shadow-sm container mx-auto">
       <div className="navbar-start">
@@ -87,7 +87,7 @@ const Navbar = () => {
             />{" "}
           </svg>
           <span className="badge badge-sm indicator-item bg-red-500 text-white">
-            8
+            {cartData.length}
           </span>
         </div>
         {/* -------------------------------- */}

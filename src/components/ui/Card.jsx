@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Check } from "lucide-react";
+import { toast } from "react-toastify";
 
-const Card = ({ product, productsBtn }) => {
-  console.log(product);
+const Card = ({ product, cartData, setCartData }) => {
   const { name, description, period, price, tag, features } = product;
+  // -----set state for Buy Now button-----
+  const [buyNowBtn, setBuyNowBtn] = useState(false);
+
+  //  handelBuyNowBtn function
+  const handelBuyNowBtn = () => {
+    toast.success(`${product.name} added successfully`);
+    setBuyNowBtn(!buyNowBtn);
+    setCartData([...cartData, product]);
+  };
+
   return (
     <div className="card w-98 space-y-4 bg-base-100 shadow-xl/5 p-6 flex flex-col">
       <div className="flex justify-end">
@@ -21,16 +31,22 @@ const Card = ({ product, productsBtn }) => {
         <span className="font-bold text-2xl text-black">${price}</span>/{period}
       </h3>
       <div className="text-[#627382]">
-        {features.map((feature) => {
+        {features.map((feature, index) => {
           return (
-            <p className="flex">
+            <p key={index} className="flex">
               <Check className="text-green-600 mr-1.5"></Check> {feature}
             </p>
           );
         })}
       </div>
-      <button className="w-full mt-auto font-semibold py-3 rounded-3xl bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white">
-        Buy Now
+      <button
+        onClick={handelBuyNowBtn}
+        className={`w-full mt-auto font-semibold py-3 rounded-3xl 
+          
+          ${buyNowBtn === true ? "bg-green-500" : "bg-linear-to-r from-[#4F39F6] to-[#9514FA]"} text-white`}
+        disabled={buyNowBtn ? true : false}
+      >
+        {buyNowBtn === true ? "Added to Card" : "Buy Now"}
       </button>
     </div>
   );

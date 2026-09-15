@@ -1,10 +1,12 @@
 import React, { use, useState } from "react";
-import Card from "./Card/Card";
+import Card from "../../ui/Card";
+import CartSection from "./CartSection/CartSection";
 
-const PremiumContainer = ({ productsDataPromise }) => {
+const PremiumContainer = ({ productsDataPromise, setCartData, cartData }) => {
   const productsData = use(productsDataPromise);
   //set state for products & card button
   const [productsBtn, setProductsBtn] = useState("productsClicked");
+
   return (
     <div className="py-28">
       <div className="flex flex-col space-y-4 justify-center items-center">
@@ -25,22 +27,30 @@ const PremiumContainer = ({ productsDataPromise }) => {
             onClick={() => setProductsBtn("cardClicked")}
             className={`btn ${productsBtn === "cardClicked" ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white" : ""} rounded-r-3xl font-bold`}
           >
-            Cart (2)
+            Cart ({cartData.length})
           </button>
         </div>
       </div>
 
-      {/* -----card container----- */}
-      <div className="container mx-auto pt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* -----card----- */}
-        {productsData.map((product) => (
-          <Card
-            key={product.id}
-            product={product}
-            productsBtn={productsBtn}
-          ></Card>
-        ))}
-      </div>
+      {/* -----display products-Card container or cart container (on condition)----- */}
+      {productsBtn === "productsClicked" ? (
+        <div className="container mx-auto pt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* -----card----- */}
+          {productsData.map((product) => (
+            <Card
+              key={product.id}
+              product={product}
+              cartData={cartData}
+              setCartData={setCartData}
+            ></Card>
+          ))}
+        </div>
+      ) : (
+        <CartSection
+          cartData={cartData}
+          setCartData={setCartData}
+        ></CartSection>
+      )}
     </div>
   );
 };
