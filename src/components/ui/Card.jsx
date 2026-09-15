@@ -1,17 +1,15 @@
-import React, { useState } from "react";
 import { Check } from "lucide-react";
 import { toast } from "react-toastify";
 
 const Card = ({ product, cartData, setCartData }) => {
   const { name, description, period, price, tag, features } = product;
-  // -----set state for Buy Now button-----
-  const [buyNowBtn, setBuyNowBtn] = useState(false);
+  // check the cartData array for buy now btn
+  const isInCart = cartData.some((cartItem) => cartItem.id === product.id);
 
   //  handelBuyNowBtn function
   const handelBuyNowBtn = () => {
     toast.success(`${product.name} added successfully`);
-    setBuyNowBtn(!buyNowBtn);
-    setCartData([...cartData, product]);
+    setCartData((currentCart) => [...currentCart, product]);
   };
 
   return (
@@ -43,10 +41,10 @@ const Card = ({ product, cartData, setCartData }) => {
         onClick={handelBuyNowBtn}
         className={`w-full mt-auto font-semibold py-3 rounded-3xl 
           
-          ${buyNowBtn === true ? "bg-green-500" : "bg-linear-to-r from-[#4F39F6] to-[#9514FA]"} text-white`}
-        disabled={buyNowBtn ? true : false}
+          ${isInCart ? "bg-green-500" : "bg-linear-to-r from-[#4F39F6] to-[#9514FA]"} text-white`}
+        disabled={isInCart}
       >
-        {buyNowBtn === true ? "Added to Card" : "Buy Now"}
+        {isInCart ? "Added to Card" : "Buy Now"}
       </button>
     </div>
   );

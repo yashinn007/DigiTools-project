@@ -8,7 +8,6 @@ import { ToastContainer } from "react-toastify";
 const productsDataPromise = fetch("data.json").then((res) => res.json());
 
 function App() {
-  const [cartItemsLength, setCartItemsLength] = useState(0);
   // set state for cart data
   const [cartData, setCartData] = useState([]);
 
