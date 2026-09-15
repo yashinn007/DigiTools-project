@@ -1,7 +1,7 @@
 import { Check } from "lucide-react";
 import { toast } from "react-toastify";
 
-const Card = ({ product, cartData, setCartData }) => {
+const Card = ({ product, cartData, setCartData, setCartBox, cartBox }) => {
   const { name, description, period, price, tag, features } = product;
   // check the cartData array for buy now btn
   const isInCart = cartData.some((cartItem) => cartItem.id === product.id);
@@ -10,6 +10,7 @@ const Card = ({ product, cartData, setCartData }) => {
   const handelBuyNowBtn = () => {
     toast.success(`${product.name} added successfully`);
     setCartData((currentCart) => [...currentCart, product]);
+    setCartBox(true);
   };
 
   return (

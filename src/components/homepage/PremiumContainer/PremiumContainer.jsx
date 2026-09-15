@@ -7,6 +7,9 @@ const PremiumContainer = ({ productsDataPromise, setCartData, cartData }) => {
   //set state for products & card button
   const [productsBtn, setProductsBtn] = useState("productsClicked");
 
+  //set state for empty massage box
+  const [cartBox, setCartBox] = useState(false);
+
   return (
     <div className="py-28">
       <div className="flex flex-col space-y-4 justify-center items-center">
@@ -42,6 +45,8 @@ const PremiumContainer = ({ productsDataPromise, setCartData, cartData }) => {
               product={product}
               cartData={cartData}
               setCartData={setCartData}
+              cartBox={cartBox}
+              setCartBox={setCartBox}
             ></Card>
           ))}
         </div>
@@ -49,6 +54,8 @@ const PremiumContainer = ({ productsDataPromise, setCartData, cartData }) => {
         <CartSection
           cartData={cartData}
           setCartData={setCartData}
+          setCartBox={setCartBox}
+          cartBox={cartBox}
         ></CartSection>
       )}
     </div>
